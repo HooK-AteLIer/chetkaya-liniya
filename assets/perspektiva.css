@@ -71,9 +71,39 @@
 .address-clinic .address-note{max-width:48ch;font-size:14px;line-height:1.75;margin-top:12px}
 .clinic-call{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;font-size:12px;color:#d3e8f2;text-decoration:underline;text-underline-offset:5px}
 
-.choice-variants{margin:0 0 25px}
+.catalog-folders{align-items:start;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,5vw,70px);margin:34px 0 25px}
+.catalog-folder{min-width:0;padding:0;border-bottom:1px solid var(--line)}
+.folder-trigger{display:grid;gap:16px;padding:8px 0 16px;list-style:none;cursor:pointer}
+.folder-trigger::-webkit-details-marker{display:none}
+.folder-trigger::after{content:none!important}
+.folder-visual{position:relative;display:block;isolation:isolate;aspect-ratio:1.72;width:min(100%,400px);margin-inline:auto;perspective:700px}
+.folder-back,.folder-front,.folder-sheets{position:absolute;display:block}
+.folder-back{inset:14% 0 0;border-radius:16px;background:linear-gradient(155deg,#658da5,#254255);border:1px solid #83aabc;box-shadow:0 18px 34px #030d1780}
+.folder-back::before{content:'';position:absolute;right:0;top:-12%;width:43%;height:18%;border-radius:12px 13px 0 0;background:#557c95}
+.folder-sheets{inset:0;z-index:1;pointer-events:none}
+.folder-sheets img{position:absolute;inset:auto 0 16%;margin:auto;width:64%;height:auto;border-radius:8px;box-shadow:0 5px 17px #07152380;transform:translateY(4%);transition:transform .52s cubic-bezier(.2,.8,.2,1)}
+.folder-sheets img:first-child{transform:translate(-10%,1%) rotate(-6deg)}
+.folder-sheets img:last-child{transform:translate(10%,1%) rotate(6deg)}
+.folder-front{z-index:2;inset:43% 0 0;border-radius:14px;background:linear-gradient(155deg,#c2e3f15e,#174054ce 77%);border:1px solid #9fc8da80;box-shadow:inset 0 1px 0 #e9faff65;backdrop-filter:blur(8px) saturate(1.3);transform-origin:bottom center;transition:transform .52s cubic-bezier(.2,.8,.2,1)}
+.folder-trigger:is(:hover,:focus-visible) .folder-front{transform:rotateX(-13deg)}
+.catalog-folder[open] .folder-front{transform:rotateX(-24deg)}
+.folder-trigger:is(:hover,:focus-visible) .folder-sheets img:first-child,.catalog-folder[open] .folder-sheets img:first-child{transform:translate(-24%,-17%) rotate(-10deg)}
+.folder-trigger:is(:hover,:focus-visible) .folder-sheets img:nth-child(2),.catalog-folder[open] .folder-sheets img:nth-child(2){transform:translateY(-24%)}
+.folder-trigger:is(:hover,:focus-visible) .folder-sheets img:last-child,.catalog-folder[open] .folder-sheets img:last-child{transform:translate(24%,-17%) rotate(10deg)}
+.folder-caption{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;color:var(--ink)}
+.folder-caption strong{font-family:Cormorant,Georgia,serif;font-size:clamp(28px,3vw,42px);font-weight:500;line-height:1.1}
+.folder-caption small{font-size:12px}
+.folder-caption small::after{content:' +' ;margin-left:4px;color:var(--blue)}
+.catalog-folder[open] .folder-caption small::after{content:' −'}
+.choice-variants{margin:0 0 20px}
 .choice-variants h4{margin:0 0 7px;font-size:14px;font-weight:700}
-.choice-variants ul{padding:0;margin:0;list-style:none}
-.choice-variants li{display:grid;gap:2px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.55}
-.choice-variants li span{color:var(--muted)}
-#choose:has(.choice-variants:not([hidden])) .answer p{min-height:0}
+.choice-variants ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;margin:10px 0;list-style:none}
+.choice-variants li{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:6px;background:#102836;font-size:13px;line-height:1.45}
+.choice-variants img{display:block;width:100%;height:auto;aspect-ratio:640/426;object-fit:cover;background:#c4d3e1}
+.choice-variants li strong{display:block;padding:9px 10px;overflow-wrap:anywhere}
+.choice-variants small{display:block;color:var(--muted)}
+.catalog-photo{display:block}
+.catalog-photo:focus-visible{outline-offset:-3px}
+#choose .choice-gallery{min-height:0;margin-top:-12px}
+.choice-gallery a{text-decoration:underline;text-underline-offset:4px;color:var(--blue)}
+@media(max-width:620px){.catalog-folders{grid-template-columns:1fr}.folder-visual{width:min(92%,345px)}}

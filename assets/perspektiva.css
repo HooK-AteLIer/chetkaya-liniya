@@ -73,7 +73,7 @@
 
 .catalog-folders{align-items:start;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,5vw,70px);margin:34px 0 25px}
 .catalog-folder{min-width:0;padding:0;border-bottom:1px solid var(--line)}
-.folder-trigger{display:grid;gap:16px;padding:8px 0 16px;list-style:none;cursor:pointer}
+.folder-trigger{display:grid;grid-template-columns:minmax(0,1fr);width:100%;gap:16px;padding:8px 0 16px;list-style:none;cursor:pointer}
 .folder-trigger::-webkit-details-marker{display:none}
 .folder-trigger::after{content:none!important}
 .folder-visual{position:relative;display:block;isolation:isolate;aspect-ratio:1.72;width:min(100%,400px);margin-inline:auto;perspective:700px}
@@ -90,7 +90,7 @@
 .folder-trigger:is(:hover,:focus-visible) .folder-sheets img:first-child,.catalog-folder[open] .folder-sheets img:first-child{transform:translate(-24%,-17%) rotate(-10deg)}
 .folder-trigger:is(:hover,:focus-visible) .folder-sheets img:nth-child(2),.catalog-folder[open] .folder-sheets img:nth-child(2){transform:translateY(-24%)}
 .folder-trigger:is(:hover,:focus-visible) .folder-sheets img:last-child,.catalog-folder[open] .folder-sheets img:last-child{transform:translate(24%,-17%) rotate(10deg)}
-.folder-caption{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;color:var(--ink)}
+.folder-caption{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;width:min(100%,400px);margin-inline:auto;color:var(--ink)}
 .folder-caption strong{font-family:Cormorant,Georgia,serif;font-size:clamp(28px,3vw,42px);font-weight:500;line-height:1.1}
 .folder-caption small{font-size:12px}
 .folder-caption small::after{content:' +' ;margin-left:4px;color:var(--blue)}
@@ -106,4 +106,4 @@
 .catalog-photo:focus-visible{outline-offset:-3px}
 #choose .choice-gallery{min-height:0;margin-top:-12px}
 .choice-gallery a{text-decoration:underline;text-underline-offset:4px;color:var(--blue)}
-@media(max-width:620px){.catalog-folders{grid-template-columns:1fr}.folder-visual{width:min(92%,345px)}}
+@media(max-width:620px){.catalog-folders{grid-template-columns:1fr}.folder-visual,.folder-caption{width:min(92%,345px)}}

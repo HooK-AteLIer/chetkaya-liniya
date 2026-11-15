@@ -28,7 +28,6 @@ openLinkedFolder();
 
 const reveals=[...document.querySelectorAll(".section .eyebrow,.section h2,.heading p,.catalog,.stellest-grid,.steps,.choices,.answer,main details,.address")];const rm=matchMedia("(prefers-reduced-motion: reduce)");const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.08});reveals.forEach(e=>{e.classList.add("reveal");observer.observe(e)});function revealMode(){document.body.classList.toggle("motion-reveal",!rm.matches);if(rm.matches)reveals.forEach(e=>e.classList.add("in"))}rm.addEventListener("change",revealMode);revealMode();
 const maxContact = document.querySelector('.max-contact');
-const maxSummary = maxContact.querySelector('summary');
 const maxCopy = maxContact.querySelector('.max-copy');
 const maxCopyStatus = maxContact.querySelector('.max-copy-status');
 
@@ -45,20 +44,26 @@ if (navigator.clipboard?.writeText) {
   });
 }
 
-maxContact.addEventListener('toggle', () => {
-  if (maxContact.open) {
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded', 'false');
-  } else {
-    maxCopyStatus.textContent = '';
-  }
+const headerContacts = document.querySelectorAll('.header-contact');
+headerContacts.forEach(contact => {
+  contact.addEventListener('toggle', () => {
+    if (contact.open) {
+      nav.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    } else if (contact === maxContact) {
+      maxCopyStatus.textContent = '';
+    }
+  });
+  document.addEventListener('click', event => {
+    if (contact.open && !contact.contains(event.target)) contact.open = false;
+  });
+  contact.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && contact.open) {
+      contact.open = false;
+      contact.querySelector('summary').focus();
+    }
+  });
 });
-document.addEventListener('click', event => {
-  if (maxContact.open && !maxContact.contains(event.target)) maxContact.open = false;
-});
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && maxContact.open) {
-    maxContact.open = false;
-    maxSummary.focus();
-  }
+document.querySelector('.qr-contact-panel a').addEventListener('click', () => {
+  document.querySelector('.qr-contact').open = false;
 });

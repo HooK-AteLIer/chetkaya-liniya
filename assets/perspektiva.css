@@ -112,16 +112,30 @@ header.wrap{gap:clamp(8px,1.2vw,18px)}
 header .phone,header nav a{white-space:nowrap}
 .header-messengers{display:flex;align-items:center;gap:7px;flex:none}
 .messenger-button{display:inline-flex;min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:0 12px;border:1px solid #8daebb;border-radius:24px;background:#102b3b;color:#edf7fc;font-size:12px;font-weight:700;line-height:1.2;white-space:nowrap;cursor:pointer}
-.messenger-button:hover,.max-contact[open] summary{background:#234557}
-.max-contact{padding:0;border:0}
-.max-contact summary::-webkit-details-marker{display:none}
-.max-contact summary::after,.max-contact[open] summary::after{content:none}
-.max-contact-panel{position:absolute;top:calc(100% + 6px);right:0;z-index:45;width:min(100%,320px);padding:16px;border:1px solid #8daebb;border-radius:12px;background:#102b3b;color:#edf7fc;box-shadow:0 12px 28px #0008;font-size:13px}
+.messenger-button:hover,.header-contact[open] summary{background:#234557}
+.header-contact{padding:0;border:0}
+.header-contact summary::-webkit-details-marker{display:none}
+.header-contact summary::after,.header-contact[open] summary::after{content:none}
+.header-contact-panel{position:absolute;top:calc(100% + 6px);right:0;z-index:45;width:min(100%,320px);padding:16px;border:1px solid #8daebb;border-radius:12px;background:#102b3b;color:#edf7fc;box-shadow:0 12px 28px #0008;font-size:13px}
+.qr-contact-panel{text-align:center;width:min(100%,248px)}
+.qr-contact-panel img{display:block;width:min(100%,184px);height:auto;margin:10px auto 12px}
 .max-contact-number{display:block;margin:6px 0 12px;font-size:17px;user-select:all}
 .max-contact-actions{display:flex;flex-wrap:wrap;gap:8px}
 .max-copy[hidden]{display:none}
 .max-copy-status:not(:empty){display:block;margin-top:8px;color:#b8e1f1}
+@media (min-width:721px) and (max-width:980px){
+  header .phone{display:none}
+  header .menu{display:block;min-height:44px;padding:10px 17px;border:1px solid #648496;border-radius:30px;background:#102b3b;color:#d6e7f0}
+  header nav{display:none;position:absolute;top:100%;right:0;z-index:40;flex-direction:column;gap:12px;padding:18px 25px;background:#102a3b;font-size:13px}
+  header nav.open{display:flex}
+}
 @media (max-width:720px){
   header.wrap .logo{width:clamp(70px,23vw,96px)}
   header.wrap .menu,.header-messengers .messenger-button{padding-inline:9px}
+}
+@media (max-width:360px){
+  header.wrap{left:4%;right:4%;gap:5px}
+  header.wrap .logo{width:61px}
+  .header-messengers{gap:4px}
+  header.wrap .menu,.header-messengers .messenger-button{padding-inline:7px}
 }

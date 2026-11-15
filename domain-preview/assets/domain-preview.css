@@ -1,0 +1,10 @@
+.preview-label{position:fixed;bottom:12px;right:12px;z-index:55;padding:4px 9px;border-radius:4px;background:#d9e7ed;color:#183342;font-size:11px}
+.site-information{display:flex;flex-wrap:wrap;gap:7px 20px}
+.site-information a,.legal-page a{text-decoration:underline;text-underline-offset:4px}
+.kids-photo img{display:block;width:100%;height:auto;border-radius:6px}
+.legal-page{max-width:760px;padding:50px 0 100px}
+.legal-page h1{font-size:clamp(40px,7vw,65px)}
+.legal-page h2{font-size:32px;margin:30px 0 14px}
+.legal-page p{max-width:none}
+.legal-draft{padding:14px 16px;border:1px solid #65899c;border-radius:6px;color:#e8eef2}
+@media(max-width:720px){.preview-label{bottom:73px;right:6%}}

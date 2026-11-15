@@ -8,7 +8,7 @@
 <meta name="description" content="Салон оптики «Чёткая Линия» в Самаре. Оправы, очки по рецепту, контактные линзы и ремонт очков. Адреса и телефон салона.">
 <meta name="theme-color" content="#091824">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/perspektiva.css">
+<link rel="stylesheet" href="assets/perspektiva.css?v=preview-contacts">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23eef4f6%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23167da2%22%20stroke-width%3D%224%22%3E%3Crect%20x%3D%227%22%20y%3D%2224%22%20width%3D%2221%22%20height%3D%2217%22%20rx%3D%227%22%2F%3E%3Crect%20x%3D%2236%22%20y%3D%2224%22%20width%3D%2221%22%20height%3D%2217%22%20rx%3D%227%22%2F%3E%3Cpath%20d%3D%22M28%2030h8M3%2025l5%203m48%200%205-3%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <link rel="stylesheet" href="assets/domain-preview.css">
 </head>
@@ -27,6 +27,29 @@
 <a href="#contacts">Салоны</a>
 </nav>
 <a class="phone" href="tel:+79270016095">+7 (927) 001-60-95</a>
+<div class="header-messengers" role="group" aria-label="Связаться с салоном">
+<a class="messenger-button" href="https://t.me/+79270016095" target="_blank" rel="noopener">Telegram</a>
+<details class="header-contact max-contact" name="header-contact">
+<summary class="messenger-button" aria-controls="max-contact-panel">MAX</summary>
+<div class="header-contact-panel max-contact-panel" id="max-contact-panel">
+<strong>Найдите салон в MAX по номеру</strong>
+<span class="max-contact-number">+7 (927) 001-60-95</span>
+<div class="max-contact-actions">
+<button type="button" class="messenger-button max-copy" hidden>Скопировать номер</button>
+<a class="messenger-button" href="https://web.max.ru/" target="_blank" rel="noopener">Открыть MAX ↗</a>
+</div>
+<span class="max-copy-status" role="status"></span>
+</div>
+</details>
+<details class="header-contact qr-contact" name="header-contact">
+<summary class="messenger-button" aria-controls="qr-contact-panel" aria-label="QR-код контактов">QR</summary>
+<div class="header-contact-panel qr-contact-panel" id="qr-contact-panel">
+<strong>Контакты «Чёткой Линии»</strong>
+<img src="assets/contacts-qr.svg" width="184" height="184" alt="QR-код для перехода в раздел контактов салона" loading="lazy">
+<a class="messenger-button" href="#contacts">Открыть контакты ↓</a>
+</div>
+</details>
+</div>
 <button class="menu" aria-expanded="false" aria-controls="nav">Меню</button>
 </header>
 <main id="main" tabindex="-1">
@@ -241,7 +264,7 @@
 <a href="#main">Наверх ↑</a>
 </footer>
 <a class="mobile-call btn" href="tel:+79270016095">Позвонить в салон ↗</a>
-<script src="assets/app.js">
+<script src="assets/app.js?v=preview-contacts">
 </script>
 <script src="assets/motion.js">
 </script>

@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="assets/perspektiva.css?v=preview-contacts">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23eef4f6%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23167da2%22%20stroke-width%3D%224%22%3E%3Crect%20x%3D%227%22%20y%3D%2224%22%20width%3D%2221%22%20height%3D%2217%22%20rx%3D%227%22%2F%3E%3Crect%20x%3D%2236%22%20y%3D%2224%22%20width%3D%2221%22%20height%3D%2217%22%20rx%3D%227%22%2F%3E%3Cpath%20d%3D%22M28%2030h8M3%2025l5%203m48%200%205-3%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <link rel="stylesheet" href="assets/domain-preview.css">
+<link rel="stylesheet" href="assets/locations.css?v=20261124">
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержимому</a>
@@ -248,9 +249,42 @@
 <a class="btn" href="tel:+79270016095">Позвонить и подобрать очки ↗</a>
 </div>
 </div>
-<div class="wrap map-links">
-<a href="https://yandex.ru/maps/org/chyotkaya_liniya/57505321973/" target="_blank" rel="noopener noreferrer">Осетинская, 16 на Яндекс Картах ↗</a>
-<a href="https://yandex.ru/maps/org/chyotkaya_liniya/57505321973/reviews/" target="_blank" rel="noopener noreferrer">Отзывы на Яндекс Картах ↗</a>
+<div class="wrap location-finder" aria-labelledby="location-heading">
+<div class="location-heading">
+<div><div class="eyebrow">ВАШ МАРШРУТ К ЧЁТКОМУ ЗРЕНИЮ</div><h3 id="location-heading">Найдите удобный адрес</h3></div>
+<p>Выберите точку на карте.<br>Перед визитом уточните время работы.</p>
+</div>
+<div class="location-layout">
+<nav class="location-list" aria-label="Адреса на карте">
+<a class="location-option" href="https://yandex.ru/maps/?text=Самара%2C%20Осетинская%20улица%2C%2016" target="_blank" rel="noopener noreferrer" data-map-location="osetinskaya" aria-current="location">
+<span class="location-number" aria-hidden="true">01</span><span><strong>Осетинская, 16</strong><span class="location-caption">Волгарь, около Софийской площади</span></span><span class="location-arrow" aria-hidden="true">↗</span>
+</a>
+<a class="location-option" href="https://yandex.ru/maps/?text=Самара%2C%20улица%20Куйбышева%2C%2084" target="_blank" rel="noopener noreferrer" data-map-location="kuybysheva">
+<span class="location-number" aria-hidden="true">02</span><span><strong>Куйбышева, 84</strong><span class="location-caption">Самара</span></span><span class="location-arrow" aria-hidden="true">↗</span>
+</a>
+<a class="location-option" href="https://yandex.ru/maps/org/chyotkaya_liniya/57505321973/" target="_blank" rel="noopener noreferrer" data-map-location="novo-sadovaya">
+<span class="location-number" aria-hidden="true">03</span><span><strong>Ново-Садовая, 164</strong><span class="location-caption">Самара</span></span><span class="location-arrow" aria-hidden="true">↗</span>
+</a>
+<div class="location-help"><span class="location-help-dot" aria-hidden="true"></span><p>Поможем сориентироваться<br><a href="tel:+79270016095">+7 (927) 001-60-95</a></p></div>
+</nav>
+<div class="location-map">
+<div class="location-map-stage">
+<div class="location-placeholder">
+<svg class="location-pin" viewBox="0 0 80 96" fill="none" aria-hidden="true"><path d="M40 83S13 57 13 35a27 27 0 1 1 54 0c0 22-27 48-27 48Z" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="35" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M21 87c-9 1-15 3-15 5s15 3 34 3 34-1 34-3-6-4-15-5" stroke="currentColor" stroke-width="1" opacity=".4"/></svg>
+<p class="location-selected">Осетинская, 16</p>
+<p class="location-map-description">Самара. Волгарь, около Софийской площади.</p>
+<button class="btn location-load" type="button" hidden>Показать карту ↗</button>
+<noscript><a class="btn" href="https://yandex.ru/maps/?text=Самара%2C%20Осетинская%20улица%2C%2016" target="_blank" rel="noopener noreferrer">Открыть карту ↗</a></noscript>
+<span class="location-provider">Интерактивная карта Яндекса</span>
+</div>
+</div>
+<div class="location-map-footer">
+<p class="location-status" role="status">На карте: Осетинская, 16</p>
+<a class="location-route" href="https://yandex.ru/maps/?text=Самара%2C%20Осетинская%20улица%2C%2016" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Картах ↗</a>
+</div>
+</div>
+</div>
+<a class="location-reviews" href="https://yandex.ru/maps/org/chyotkaya_liniya/57505321973/reviews/" target="_blank" rel="noopener noreferrer">Отзывы о точке на Ново-Садовой, 164 ↗</a>
 </div>
 </section>
 </main>
@@ -268,5 +302,6 @@
 </script>
 <script src="assets/motion.js">
 </script>
+<script src="assets/locations.js?v=20261124" defer></script>
 </body>
 </html>
